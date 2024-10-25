@@ -3,6 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Case 01</title>
+
+  <style>
+    section{
+      display: flex;
+    }
+
+    h1{
+      color: red;
+      text-align: center;
+    }
+
+    section>div{
+      width: 200px;
+      aspect-ratio: 1/1;
+      border: 2px solid darkblue;
+      background: url("animation/manWalking.gif");
+      border-radius: 8px;
+      margin: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section>div>h2{
+      color: lightskyblue;
+      margin-left: 90px;
+      margin-bottom: 120px;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -14,28 +44,48 @@
 <section>
   <div>
     <h2>A</h2>
-    <div></div>
+
   </div>
   <div>
     <h2>B</h2>
-    <div></div>
+
   </div>
   <div>
     <h2>C</h2>
-    <div></div>
+
   </div>
   <div>
     <h2>D</h2>
-    <div></div>
+
   </div>
   <div>
     <h2>E</h2>
-    <div></div>
+
   </div>
   <div>
     <h2>F</h2>
-    <div></div>
+
   </div>
 </section>
+
+<!--add script-->
+<script>
+
+  let arr = ["A", "B", "C", "D", "E", "F"]; // -> F
+
+  setInterval(() => {
+    let last_value = arr.pop();
+    arr.unshift(last_value);
+    console.log(arr);
+
+    document.getElementsByTagName("h2")[0].innerText = arr[0];
+    document.getElementsByTagName("h2")[1].innerText = arr[1];
+    document.getElementsByTagName("h2")[2].innerText = arr[2];
+    document.getElementsByTagName("h2")[3].innerText = arr[3];
+    document.getElementsByTagName("h2")[4].innerText = arr[4];
+    document.getElementsByTagName("h2")[5].innerText = arr[5];
+  }, 3000);
+
+</script>
 </body>
 </html>
