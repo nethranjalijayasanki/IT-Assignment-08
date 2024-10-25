@@ -4,11 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case 02</title>
+
+
+    <style>
+        body {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:lightslategray;
+        }
+
+        section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            width: 600px;
+            height: 200px;
+            padding: 5px;
+        }
+
+        .box {
+            width: 80px;
+            height: 50px;
+        }
+
+
+        .line {
+            height: 6px;
+            width: 600px;
+            background-color: #ccc;
+            margin: 0 5px;
+        }
+
+        .middleBox {
+            display: flex;
+            gap: 15px;
+        }
+
+        .box-top {
+            position: relative;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .box-bottom {
+            position: relative;
+            margin-left: auto;
+            margin-right: 0;
+        }
+        .red {
+            background-color: red;
+        }
+
+        .pink {
+            background-color: hotpink;
+        }
+
+        .cream {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: limegreen;
+        }
+    </style>
 </head>
 <body>
 
 <section>
-    <div class="red box"></div>
+    <div class="red box box-top"></div>
     <div class="line"></div>
     <div class="middleBox">
         <div class="pink box"></div>
@@ -17,7 +93,7 @@
         <div class="blue box"></div>
     </div>
     <div class="line"></div>
-    <div class="green box"></div>
+    <div class="green box box-bottom"></div>
     <div class="middleBox">
         <button id="startBtn">Start</button>
         <button id="stopBtn">Stop</button>
