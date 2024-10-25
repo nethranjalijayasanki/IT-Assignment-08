@@ -84,22 +84,44 @@
 <body>
 
 <section>
-    <div class="red box box-top"></div>
+    <div class="red box b1 box-top"></div>
     <div class="line"></div>
     <div class="middleBox">
-        <div class="pink box"></div>
-        <div class="cream box"></div>
-        <div class="yellow box"></div>
-        <div class="blue box"></div>
+        <div class="pink box b2"></div>
+        <div class="cream box b3"></div>
+        <div class="yellow box b4"></div>
+        <div class="blue box b5"></div>
     </div>
     <div class="line"></div>
-    <div class="green box box-bottom"></div>
+    <div class="green box b6 box-bottom"></div>
     <div class="middleBox">
         <button id="startBtn">Start</button>
         <button id="stopBtn">Stop</button>
     </div>
 </section>
 
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    let colors = ["red", "pink", "cream", "yellow", "blue", "green"];
+    let index = 0;
+    let intervalId;
 
+    $('#startBtn').click(() => {
+        intervalId = setInterval(() => {
+            let tempColor = colors.pop();
+            colors.unshift(tempColor);
+            $(".b1").css("background-color", colors[0]);
+            $(".b2").css("background-color", colors[1]);
+            $(".b3").css("background-color", colors[2]);
+            $(".b4").css("background-color", colors[3]);
+            $(".b5").css("background-color", colors[4]);
+            $(".b6").css("background-color", colors[5]);
+        }, 1000);
+    });
+
+    $('#stopBtn').click(() => {
+        clearInterval(intervalId);
+    });
+</script>
 </body>
 </html>
